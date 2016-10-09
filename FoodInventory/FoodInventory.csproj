@@ -526,6 +526,9 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\_AddEditProduct.cshtml" />
     <Content Include="Views\Home\_ImportProducts.cshtml" />
+    <Content Include="TestFile.xlsx" />
+    <Content Include="TestFile2.xls" />
+    <Content Include="TestFile3.xls" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
