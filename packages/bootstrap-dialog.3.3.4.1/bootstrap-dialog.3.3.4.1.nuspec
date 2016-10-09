@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>bootstrap-dialog</id>
+    <version>3.3.4.1</version>
+    <title>bootstrap-dialog</title>
+    <authors>nakupanda</authors>
+    <owners>nakupanda</owners>
+    <projectUrl>https://github.com/nakupanda/bootstrap3-dialog</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Make use of Twitter Bootstrap's modal more monkey-friendly</description>
+    <summary />
+    <language>en-US</language>
+    <tags>bootstrap dialog</tags>
+  </metadata>
+</package>
