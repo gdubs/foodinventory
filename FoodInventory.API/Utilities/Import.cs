@@ -26,9 +26,6 @@ namespace FoodInventory.API.Utilities
             _validRows = new List<T>();
             _file = file;
             _dataSet = GetDataSet();
-            GetRequiredColumns();
-            CheckFileColumns();
-            ValidateItems();
         }
 
         private DataSet GetDataSet()
@@ -95,8 +92,11 @@ namespace FoodInventory.API.Utilities
                 throw new Exception(message.ToString());
             }
         }
-        private void ValidateItems()
+        public void ValidateItems()
         {
+            GetRequiredColumns();
+            CheckFileColumns();
+
             for (var r = 0; r < _dataSet.Tables[0].Rows.Count; r++)
             {
                 DataRow row = _dataSet.Tables[0].Rows[r];

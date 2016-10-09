@@ -68,7 +68,7 @@ namespace FoodInventory.API.Controllers
                     var fileName = Path.GetFileName(file.FileName);
 
                     Import<Product> xl = new Import<Product>(file);
-                    //var items = xl.ValidateItems(file);
+                    xl.ValidateItems();
 
                     if (xl._validRows.Count > 0)
                     {
