@@ -11,7 +11,7 @@ using System.Web;
 
 namespace FoodInventory.API.Utilities
 {
-    public class Import<T> where T : class, new()
+    public class ImportService<T> where T : class, new()
     {
         private DataSet _dataSet;
         private HttpPostedFile _file;
@@ -19,13 +19,12 @@ namespace FoodInventory.API.Utilities
         private List<string> _missingHeaders;
         public List<T> _invalidRows;
         public List<T> _validRows;
+        
         private Type type = typeof(T);
-        public Import(HttpPostedFile file)
+        public ImportService()
         {
             _invalidRows = new List<T>();
             _validRows = new List<T>();
-            _file = file;
-            _dataSet = GetDataSet();
         }
 
         private DataSet GetDataSet()
@@ -92,10 +91,15 @@ namespace FoodInventory.API.Utilities
                 throw new Exception(message.ToString());
             }
         }
-        public void ValidateItems()
+        public void ValidateItems(HttpPostedFile file)
         {
+
+            _file = file;
+            _dataSet = GetDataSet();
+
             GetRequiredColumns();
             CheckFileColumns();
+
 
             for (var r = 0; r < _dataSet.Tables[0].Rows.Count; r++)
             {
